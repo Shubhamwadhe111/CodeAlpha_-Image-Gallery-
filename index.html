@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — Curated Visual Experience</title>
+    <meta name="description" content="A clean, responsive image gallery featuring curated photography, interactive category filtering, and a sleek lightbox viewer.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar-header" id="home">
+        <nav class="navbar container">
+            <a href="#home" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <span>Gallery</span>
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="7" x2="20" y2="7"></line>
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="4" y1="17" x2="20" y2="17"></line>
+                </svg>
+                <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-content container">
+                <span class="hero-badge">Curated Collection</span>
+                <h1 class="hero-title">Explore the Gallery</h1>
+                <p class="hero-subheading">Discover beautiful moments through a curated collection of images.</p>
+                <a href="#gallery" class="cta-button" id="cta-view-gallery">
+                    <span>View Gallery</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section class="gallery-section container" id="gallery">
+
+            <!-- CATEGORY FILTERS -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="nature">Nature</button>
+                <button class="filter-btn" data-filter="architecture">Architecture</button>
+                <button class="filter-btn" data-filter="travel">Travel</button>
+                <button class="filter-btn" data-filter="animals">Animals</button>
+            </div>
+
+            <!-- IMAGE GALLERY GRID (12 WORKING IMAGES) -->
+            <div class="gallery-grid" id="gallery-grid">
+                
+                <!-- CARD 1: NATURE -->
+                <article class="gallery-card" data-category="nature" data-id="1">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Majestic Mountain Peak" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Nature</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Majestic Mountain Peak</h3>
+                                <button class="view-btn" aria-label="View Majestic Mountain Peak image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 2: NATURE -->
+                <article class="gallery-card" data-category="nature" data-id="2">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Emerald Forest Mist" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Nature</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Emerald Forest Mist</h3>
+                                <button class="view-btn" aria-label="View Emerald Forest Mist image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 3: NATURE -->
+                <article class="gallery-card" data-category="nature" data-id="3">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Sunset Valley Horizon" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Nature</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Sunset Valley Horizon</h3>
+                                <button class="view-btn" aria-label="View Sunset Valley Horizon image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 4: ARCHITECTURE -->
+                <article class="gallery-card" data-category="architecture" data-id="4">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Modern Glass Skyscraper" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Architecture</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Modern Glass Skyscraper</h3>
+                                <button class="view-btn" aria-label="View Modern Glass Skyscraper image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 5: ARCHITECTURE -->
+                <article class="gallery-card" data-category="architecture" data-id="5">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Geometric Lines & Shadows" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Architecture</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Geometric Lines & Shadows</h3>
+                                <button class="view-btn" aria-label="View Geometric Lines & Shadows image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 6: ARCHITECTURE -->
+                <article class="gallery-card" data-category="architecture" data-id="6">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Contemporary Living Space" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Architecture</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Contemporary Living Space</h3>
+                                <button class="view-btn" aria-label="View Contemporary Living Space image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 7: TRAVEL -->
+                <article class="gallery-card" data-category="travel" data-id="7">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Tropical Turquoise Shores" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Travel</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Tropical Turquoise Shores</h3>
+                                <button class="view-btn" aria-label="View Tropical Turquoise Shores image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 8: TRAVEL -->
+                <article class="gallery-card" data-category="travel" data-id="8">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Scenic Mountain Highway" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Travel</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Scenic Mountain Highway</h3>
+                                <button class="view-btn" aria-label="View Scenic Mountain Highway image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 9: TRAVEL -->
+                <article class="gallery-card" data-category="travel" data-id="9">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Alpine Landmark Vista" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Travel</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Alpine Landmark Vista</h3>
+                                <button class="view-btn" aria-label="View Alpine Landmark Vista image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 10: ANIMALS -->
+                <article class="gallery-card" data-category="animals" data-id="10">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Playful Golden Companion" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Animals</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Playful Golden Companion</h3>
+                                <button class="view-btn" aria-label="View Playful Golden Companion image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 11: ANIMALS -->
+                <article class="gallery-card" data-category="animals" data-id="11">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Curious Tabby Portrait" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Animals</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Curious Tabby Portrait</h3>
+                                <button class="view-btn" aria-label="View Curious Tabby Portrait image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 12: ANIMALS (FIXED RELIABLE LION IMAGE) -->
+                <article class="gallery-card" data-category="animals" data-id="12">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Majestic Wildlife Lion" 
+                             loading="lazy"
+                             data-large="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1600&q=85">
+                        <div class="card-overlay">
+                            <span class="category-tag">Animals</span>
+                            <div class="overlay-info">
+                                <h3 class="card-title">Majestic Wildlife Lion</h3>
+                                <button class="view-btn" aria-label="View Majestic Wildlife Lion image">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>View</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section" id="about">
+            <div class="container about-container">
+                <div class="about-content">
+                    <span class="section-label">About The Project</span>
+                    <h2 class="about-title">Crafted with Precision & Simplicity</h2>
+                    <p class="about-description">
+                        This responsive image gallery demonstrates high-performance web standards using pure HTML5, CSS3 Grid, and Vanilla JavaScript. Features fluid category filtering, dynamic pagination counters, keyboard-accessible navigation, and interactive lightbox overlays.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>Fully Responsive Grid</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>Keyboard Accessible</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>Zero External Dependencies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image View Modal">
+        <!-- Backdrop click listener -->
+        <div class="lightbox-overlay" id="lightbox-overlay"></div>
+
+        <!-- Lightbox Main Container -->
+        <div class="lightbox-container">
+            <!-- Top Controls Toolbar -->
+            <div class="lightbox-header">
+                <div class="lightbox-meta">
+                    <span class="lightbox-category" id="lightbox-category">Nature</span>
+                    <span class="lightbox-counter" id="lightbox-counter">1 / 12</span>
+                </div>
+                <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox (ESC)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Lightbox Image Wrapper -->
+            <div class="lightbox-body">
+                <!-- Previous Navigation Button -->
+                <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous Image (Left Arrow)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Dynamic Image -->
+                <div class="lightbox-image-wrapper">
+                    <img src="" alt="" id="lightbox-img" class="lightbox-img">
+                </div>
+
+                <!-- Next Navigation Button -->
+                <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next Image (Right Arrow)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Lightbox Caption Footer -->
+            <div class="lightbox-footer">
+                <h3 class="lightbox-title" id="lightbox-title">Image Title</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2026 Gallery. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#home" class="social-icon" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                    </svg>
+                </a>
+                <a href="#home" class="social-icon" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="#home" class="social-icon" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
